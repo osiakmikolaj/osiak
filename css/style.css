@@ -29,10 +29,20 @@ nav {
     background-color: white;
 }
 
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
 #nav-brand {
     font-family: monospace;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 35px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
 }
 
 #nav-links {
@@ -44,7 +54,7 @@ nav {
 #nav-links a {
     text-decoration: none;
     color: black;
-    height: 25px;
+    height: 35px;
 }
 
 /* main */
