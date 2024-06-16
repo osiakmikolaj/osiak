@@ -11,7 +11,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
         <link rel="stylesheet" href="css/style.css" />
-        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     </head>
     <body>
         <section id="container">
@@ -36,13 +36,13 @@
             <!-- main -->
             <div id="main">
                 <!-- Typewirter and circle -->
-                <!-- <div id="section-1">
+                <div id="section-1">
                     <div id="typewriter"><span class="typed-text"></span><span class="cursor">_</span></div>
                     <div id="pulsating-circle"></div>
-                </div> -->
+                </div>
                 <!-- Projects -->
                 <div id="section-2">
-                    <!-- <h1 style="margin-top: 120px">Projects</h1>
+                    <h1 style="margin-top: 120px">Projects</h1>
                     <div id="cards">
                         <div class="card" data-card-id="1">
                             <div class="card-title"><span class="material-symbols-outlined"> keyboard_arrow_right </span>zalasek.pl</div>
@@ -58,22 +58,30 @@
                         </div>
                     </div>
                     <div id="about">
-                        <p>
+                        <!-- <p>
                             I'm Mikołaj Osiak, and I thrive at the intersection of technology and creativity. By day, I'm a technical whiz supporting Ford's
                             operations. By night (and most weekends!), I transform into a web developer crafting digital solutions for small businesses. I'm a
                             firm believer in continuous learning, which is why I'm pursuing a degree in computer science. Oh, and I love music – my guitar is
                             never far away!
-                        </p>
+                        </p> -->
                     </div>
-                    <div id="experience"></div> -->
+                    <div id="experience"></div>
                     <div id="contact">
                         <form id="contactForm">
                             <label for="name">Name</label>
+                            <br />
                             <input type="text" id="name" name="name" placeholder="Jan Nowak" required />
+                            <br />
                             <label for="email">Email</label>
+                            <br />
                             <input type="email" id="email" name="email" placeholder="name@email.com" required />
+                            <br />
                             <label for="message">Message</label>
+                            <br />
                             <textarea id="message" name="message" placeholder="Type your message here." required></textarea>
+                            <br />
+                            <div class="cf-turnstile" data-sitekey="0x4AAAAAAAcqT9YoImj7oRw2"></div>
+                            <br />
                             <button type="submit">Wyślij</button>
                         </form>
                     </div>
@@ -81,6 +89,7 @@
             </div>
             <!-- main -->
         </section>
+        <script src="js/turnstile.js"></script>
         <script src="js/form.js"></script>
         <script src="js/cards.js"></script>
         <script src="js/typewriter.js"></script>

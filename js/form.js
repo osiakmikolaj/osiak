@@ -4,8 +4,7 @@ form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const name = document.getElementById("name").value;
-    const email = "contact@osiak.dev";
-    const userEmail = document.getElementById("email").value;
+    const email = document.getElementById("email").value;
     const message = document.getElementById("message").value;
 
     try {
@@ -14,7 +13,7 @@ form.addEventListener("submit", async (event) => {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ name, email, userEmail, message }),
+            body: JSON.stringify({ name, email, message }),
         });
 
         if (response.ok) {
