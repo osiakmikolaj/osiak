@@ -12,6 +12,7 @@ form.addEventListener("submit", async (event) => {
         const response = await fetch("https://contact.mikolaj.workers.dev/", {
             method: "POST",
             headers: {
+                'Access-Control-Allow-Origin': '*',
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({ name, email, userEmail, message }),
