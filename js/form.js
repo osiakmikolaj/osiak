@@ -16,6 +16,7 @@ form.addEventListener("submit", async (event) => {
             body: JSON.stringify({ name, email, message }),
         });
 
+        // todo zmienić ładniejsze efekty
         if (response.ok) {
             alert("Wiadomość została wysłana!");
             form.reset();
