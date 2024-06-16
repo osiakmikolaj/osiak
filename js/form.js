@@ -19,15 +19,15 @@ form.addEventListener("submit", async (event) => {
 
         if (response.ok) {
             responseMess.style.color = "#a5ffd6";
-            responseMess.textContent = "Wiadomość została wysłana!";
+            responseMess.textContent = "The message has been sent!";
             form.reset();
         } else {
             responseMess.style.color = "#ffa69e";
-            responseMess.textContent = "Wystąpił błąd podczas wysyłania wiadomości.";
+            responseMess.textContent = "An error occurred while sending the message.";
         }
     } catch (error) {
         console.error("Błąd:", error);
         responseMess.style.color = "#ffa69e";
-        responseMess.textContent = "Wystąpił błąd podczas wysyłania wiadomości.";
+        responseMess.textContent = "An error occurred while sending the message.";
     }
 });
