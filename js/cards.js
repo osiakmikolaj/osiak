@@ -8,32 +8,35 @@ const cardData = {
         title: "zalasek.pl",
         text: `The zalasek.pl website is about the Zalasek resort, located in the Beskid Wyspowy mountains. 
         It was built using the Bootstrap framework, which provides a responsive layout that adapts to various devices.`,
-        links: `<a href="https://zalasek.pl/" target="_blank">https://zalasek.pl/</a> 
-        <a href="https://github.com/osiakmikolaj/zalasek" target="_blank">Code at Github</a>`,
+        links: `<a class="project-link" href="https://www.zalasek.pl/" target="_blank">zalasek.pl</a></br>
+        <a class="project-link" href="https://github.com/osiakmikolaj/zalasek" target="_blank">Github</a>`,
         image: "assets/zalasek_view.png",
     },
     2: {
-        title: "Test",
-        text: "Treść karty 2",
-        links: "Linki do karty 2",
-        image: "assets/test.png",
+        title: "Survival Game",
+        text: "A 2D Shooter made with HTML5 Canvas and JavaScript.",
+        links: `<a class="project-link" href="https://survivalgame.pages.dev/" target="_blank">survivalgame.pages.dev</a></br>
+        <a class="project-link" href="https://github.com/osiakmikolaj/SurvivalGame" target="_blank">Github</a>`,
+        image: "assets/game_view.png",
     },
     3: {
-        title: "Test",
-        text: "Treść karty 3",
-        links: "Linki do karty 1",
-        image: "assets/test.png",
+        title: "TV Show Search",
+        text: "A webiste for searching images of TV series.",
+        links: `<a class="project-link" href="https://searchtvshows.pages.dev/" target="_blank">searchtvshows.pages.dev</a></br> 
+        <a class="project-link" href="https://github.com/osiakmikolaj/searchTvShows" target="_blank">Github</a>`,
+        image: "assets/search_view.png",
     },
     4: {
-        title: "Test",
-        text: "Treść karty 4",
-        links: "Linki do karty 1",
-        image: "assets/test.png",
+        title: "Portfolio",
+        text: "the very site you're exploring right now! I designed it with mobile devices in mind, so you can seamlessly browse my work and experience whether you're on your phone, tablet, or computer.",
+        links: `<a class="project-link" href="https://www.osiak.dev/" target="_blank">osiak.dev</a></br> 
+        <a class="project-link" href="https://github.com/osiakmikolaj/osiak" target="_blank">Github</a>`,
+        image: "assets/portfolio_view.png",
     },
 };
 
 function openCloseCards(windowWidth) {
-    if (windowWidth > 683) {
+    if (windowWidth >= 683) {
         openCardArray = [];
         const cards = cardsContainer.querySelectorAll(".card");
         cards.forEach((card) => {
@@ -42,15 +45,15 @@ function openCloseCards(windowWidth) {
             card.innerHTML = `
                 <div class="card-title">${data.title}</div>
                 <div class="card-text">
-                    <p>${data.text}</p>
-                    <p>${data.links}</p>
+                    <div class="project-about">${data.text}</div>
+                    <div class="project-links">${data.links}</div>
                 </div>
                 <div class="card-pictures">
-                    <img src="${data.image}">
+                    <img src="${data.image}" alt="${data.title} image">
                 </div>
             `;
         });
-    } else if (windowWidth <= 683) {
+    } else if (windowWidth <= 682) {
         const cards = cardsContainer.querySelectorAll(".card");
         cards.forEach((card) => {
             const cardId = card.dataset.cardId;
@@ -61,7 +64,7 @@ function openCloseCards(windowWidth) {
 }
 
 function openCloseCard(event) {
-    if (windowWidth > 683) return;
+    if (windowWidth >= 683) return;
 
     const card = event.target.closest(".card");
     if (card) {
@@ -77,11 +80,11 @@ function openCloseCard(event) {
             card.innerHTML = `
                 <div class="card-title"><span class="material-symbols-outlined"> keyboard_arrow_down </span>${data.title}</div>
                 <div class="card-text">
-                    <p>${data.text}</p>
-                    <p>${data.links}</p>
+                    <div class="project-about">${data.text}</div>
+                    <div class="project-links">${data.links}</div>
                 </div>
                 <div class="card-pictures">
-                    <img src="${data.image}">
+                    <img src="${data.image}" alt="${data.title} image">
                 </div>
             `;
         }

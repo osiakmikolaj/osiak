@@ -8,6 +8,32 @@ body {
     scroll-behavior: smooth;
 }
 
+/* dark mode */
+.dark-mode {
+    background-color: #1a1a1a;
+    color: white;
+}
+
+.nav-dark-mode {
+    background: rgba(26, 26, 26, 0.47);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.brand-dark-mode {
+    color: white;
+}
+
+body.dark-mode .project-link {
+    color: white;
+}
+
+/* h1 */
+h1 {
+    font-size: 54px;
+    margin: 15px 0px 15px 0px;
+}
+
 /* container */
 #container {
     max-width: 1920px;
@@ -61,6 +87,10 @@ nav a {
     height: 35px;
 }
 
+#mode-btn {
+    cursor: pointer;
+}
+
 /* main */
 #main {
     margin-top: 50px;
@@ -69,15 +99,17 @@ nav a {
 
 /* Section 1 */
 #section-1 {
-    margin-top: 50px;
+    max-width: 1270px;
     overflow: hidden;
+    margin: auto;
+    margin-top: 50px;
 }
 
 /* typewirter */
 #typewriter {
     font-family: monospace;
     white-space: nowrap;
-    font-size: 36px;
+    font-size: 72px;
     font-weight: bold;
     background-color: rgba(0, 0, 0, 0);
 }
@@ -90,6 +122,7 @@ nav a {
     display: inline-block;
     animation: blink 1s infinite;
     z-index: 1;
+    color: rgb(144, 158, 238);
 }
 
 @keyframes blink {
@@ -133,19 +166,27 @@ nav a {
 #section-2 {
     display: flex;
     flex-direction: column;
+    max-width: 1270px;
+    margin: auto;
+}
+
+/* Projects */
+#projects {
+    display: flex;
+    flex-direction: column;
 }
 
 #cards {
-    display: grid;
-    gap: 15px 15px;
-    grid-template-columns: 1fr;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .card {
     display: flex;
     flex-direction: column;
-    background: rgba(255, 255, 255, 0.47);
-    border: 1px solid black;
+    max-width: 630px;
 }
 
 .card-title {
@@ -159,7 +200,14 @@ nav a {
 }
 
 .card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
     padding: 0 15px 0 15px;
+}
+
+.project-links {
+    margin-bottom: 15px;
 }
 
 .card-title > span {
@@ -170,16 +218,16 @@ nav a {
     padding: 0 15px 15px 15px;
 }
 
-.card-text > p > a {
-    display: flex;
+.card-text > div > a {
+    display: inline-flex;
     flex-direction: row;
     align-items: center;
     text-decoration: underline;
     color: black;
 }
 
-.card-text > p > a:hover {
-    display: flex;
+.card-text > div > a:hover {
+    display: inline-flex;
     flex-direction: row;
     align-items: center;
     color: rgb(144, 158, 238);
@@ -191,18 +239,102 @@ nav a {
     max-width: 600px;
 }
 
+@media screen and (max-width: 683px) {
+    #cards {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    #typewriter {
+        font-size: 38px;
+    }
+}
+
 @media screen and (min-width: 683px) {
-    #cards {
-        grid-template-columns: 1fr 1fr;
+    .card-title {
+        cursor: default !important;
+    }
+
+    .project-about {
+        height: 70px;
     }
 }
 
-@media screen and (min-width: 1329px) {
-    #cards {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-}
-
+/* About */
 #about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     font-size: 18px;
+}
+
+/* Contact */
+#contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+#contactForm {
+    margin: 0px auto 0px auto;
+}
+
+#contactForm > label {
+    font-size: 18px;
+    padding: 5px 0px 5px 0px;
+}
+
+#contactForm > input {
+    border: 1px solid rgb(144, 158, 238);
+    padding: 5px;
+    font-size: 18px;
+    margin: 5px 0px 10px 0px;
+    width: 230px;
+}
+
+#contactForm > input:focus {
+    outline: 3px solid rgb(144, 158, 238);
+}
+
+#contactForm > textarea {
+    border: 1px solid rgb(144, 158, 238);
+    padding: 5px;
+    font-size: 16px;
+    margin: 5px 0px 10px 0px;
+    width: 280px;
+    height: 100px;
+}
+
+#contactForm > textarea:focus {
+    outline: 3px solid rgb(144, 158, 238);
+}
+
+#contactForm > button {
+    border: 1px solid rgb(144, 158, 238);
+    padding: 5px;
+    font-size: 18px;
+    margin: 5px 0px 10px 0px;
+    width: 100px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#contactForm > button:hover {
+    background-color: rgb(144, 158, 238);
+    color: white;
+}
+
+#response-message {
+    text-align: center;
+}
+
+/* footer */
+footer {
+    font-size: 14px;
+    padding: 50px;
+    text-align: center;
 }

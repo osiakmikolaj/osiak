@@ -1,4 +1,5 @@
 const form = document.getElementById("contactForm");
+const responseMess = document.getElementById("response-message");
 
 form.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -16,15 +17,17 @@ form.addEventListener("submit", async (event) => {
             body: JSON.stringify({ name, email, message }),
         });
 
-        // todo zmienić ładniejsze efekty
         if (response.ok) {
-            alert("Wiadomość została wysłana!");
+            responseMess.style.color = "#a5ffd6";
+            responseMess.textContent = "Wiadomość została wysłana!";
             form.reset();
         } else {
-            alert("Wystąpił błąd podczas wysyłania wiadomości.");
+            responseMess.style.color = "#ffa69e";
+            responseMess.textContent = "Wystąpił błąd podczas wysyłania wiadomości.";
         }
     } catch (error) {
         console.error("Błąd:", error);
-        alert("Wystąpił błąd podczas wysyłania wiadomości.");
+        responseMess.style.color = "#ffa69e";
+        responseMess.textContent = "Wystąpił błąd podczas wysyłania wiadomości.";
     }
 });
