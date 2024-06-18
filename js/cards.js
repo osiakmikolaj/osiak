@@ -2,6 +2,8 @@
 const cardsContainer = document.querySelector("#section-2");
 let openCardArray = [];
 let windowWidth = window.innerWidth;
+let touchStartX = 0;
+let touchEndX = 0;
 
 const cardData = {
     1: {
@@ -100,6 +102,19 @@ window.addEventListener("resize", () => {
     openCloseCards(windowWidth);
 });
 
+cardsContainer.addEventListener("touchstart", (event) => {
+    touchStartX = event.changedTouches[0].screenX;
+});
+
+cardsContainer.addEventListener("touchend", (event) => {
+    touchEndX = event.changedTouches[0].screenX;
+    // Jeśli różnica między początkiem a końcem dotknięcia jest mniejsza niż 10px, traktuj to jako kliknięcie
+    if (Math.abs(touchStartX - touchEndX) < 10) {
+        openCloseCard(event);
+    }
+});
+
 cardsContainer.addEventListener("click", (event) => {
+    if (windowWidth >= 683) return;
     openCloseCard(event);
 });
