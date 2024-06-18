@@ -75,6 +75,7 @@ function openCloseCard(event) {
         const isTitleClicked = event.target.classList.contains("card-title");
 
         if (isTitleClicked && openCardArray.includes(cardId)) {
+            console.log("close");
             card.innerHTML = `<div class="card-title"><span class="material-symbols-outlined"> keyboard_arrow_right </span>${data.title}</div>`;
             openCardArray = openCardArray.filter((id) => id !== cardId);
         } else if (!openCardArray.includes(cardId)) {
@@ -108,7 +109,6 @@ cardsContainer.addEventListener("touchstart", (event) => {
 
 cardsContainer.addEventListener("touchend", (event) => {
     touchEndX = event.changedTouches[0].screenX;
-    // Jeśli różnica między początkiem a końcem dotknięcia jest mniejsza niż 10px, traktuj to jako kliknięcie
     if (Math.abs(touchStartX - touchEndX) < 10) {
         openCloseCard(event);
     }
