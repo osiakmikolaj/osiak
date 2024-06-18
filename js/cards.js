@@ -1,10 +1,8 @@
-// cards
 const cardsContainer = document.querySelector("#section-2");
 let openCardArray = [];
 let windowWidth = window.innerWidth;
-let touchStartX = 0;
-let touchEndX = 0;
 
+// cards data
 const cardData = {
     1: {
         title: "zalasek.pl",
@@ -37,6 +35,7 @@ const cardData = {
     },
 };
 
+// close / open all cards
 function openCloseCards(windowWidth) {
     if (windowWidth >= 683) {
         openCardArray = [];
@@ -65,6 +64,7 @@ function openCloseCards(windowWidth) {
     }
 }
 
+// open / close card
 function openCloseCard(event) {
     if (windowWidth >= 683) return;
 
@@ -73,9 +73,7 @@ function openCloseCard(event) {
         const cardId = card.dataset.cardId;
         const data = cardData[cardId];
         const isTitleClicked = event.target.classList.contains("card-title");
-
         if (isTitleClicked && openCardArray.includes(cardId)) {
-            console.log("close");
             card.innerHTML = `<div class="card-title"><span class="material-symbols-outlined"> keyboard_arrow_right </span>${data.title}</div>`;
             openCardArray = openCardArray.filter((id) => id !== cardId);
         } else if (!openCardArray.includes(cardId)) {
@@ -94,6 +92,7 @@ function openCloseCard(event) {
     }
 }
 
+// all cards
 document.addEventListener("DOMContentLoaded", () => {
     openCloseCards(windowWidth);
 });
@@ -103,18 +102,7 @@ window.addEventListener("resize", () => {
     openCloseCards(windowWidth);
 });
 
-cardsContainer.addEventListener("touchstart", (event) => {
-    touchStartX = event.changedTouches[0].screenX;
-});
-
-cardsContainer.addEventListener("touchend", (event) => {
-    touchEndX = event.changedTouches[0].screenX;
-    if (Math.abs(touchStartX - touchEndX) < 10) {
-        openCloseCard(event);
-    }
-});
-
+// single card
 cardsContainer.addEventListener("click", (event) => {
-    if (windowWidth >= 683) return;
     openCloseCard(event);
 });
