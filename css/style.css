@@ -6,16 +6,17 @@ body {
     flex-direction: column;
     align-items: center;
     scroll-behavior: smooth;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 /* dark mode */
 .dark-mode {
-    background-color: #1a1a1a;
+    background-color: #121212;
     color: white;
 }
 
 .nav-dark-mode {
-    background: rgba(26, 26, 26, 0.47);
+    background: rgba(18, 18, 18, 0.47);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
@@ -85,10 +86,16 @@ nav a {
     text-decoration: none;
     color: black;
     height: 35px;
+    transition: color 0.5s ease;
 }
 
 #mode-btn {
     cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+#mode-btn:hover {
+    transform: rotate(360deg);
 }
 
 /* main */
@@ -122,7 +129,7 @@ nav a {
     display: inline-block;
     animation: blink 1s infinite;
     z-index: 1;
-    color: rgb(144, 158, 238);
+    color: #6eacf6;
 }
 
 @keyframes blink {
@@ -280,51 +287,62 @@ nav a {
 }
 
 #contactForm {
-    margin: 0px auto 0px auto;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
 }
 
-#contactForm > label {
+.contactForm-continer {
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+#contactForm > div > label {
     font-size: 18px;
     padding: 5px 0px 5px 0px;
 }
 
-#contactForm > input {
-    border: 1px solid rgb(144, 158, 238);
+#contactForm > div > input {
+    border: 2px solid #6eacf6;
     padding: 5px;
     font-size: 18px;
-    margin: 5px 0px 10px 0px;
     width: 230px;
 }
 
-#contactForm > input:focus {
-    outline: 3px solid rgb(144, 158, 238);
+#contactForm > div > input:focus {
+    outline: 2px solid #6eacf6;
 }
 
-#contactForm > textarea {
-    border: 1px solid rgb(144, 158, 238);
+#contactForm > div > textarea {
+    border: 2px solid #6eacf6;
     padding: 5px;
     font-size: 16px;
-    margin: 5px 0px 10px 0px;
     width: 280px;
     height: 100px;
+    margin-bottom: 10px;
 }
 
-#contactForm > textarea:focus {
-    outline: 3px solid rgb(144, 158, 238);
+#contactForm > div > textarea:focus {
+    outline: 2px solid #6eacf6;
 }
 
 #contactForm > button {
-    border: 1px solid rgb(144, 158, 238);
+    border: 1px solid #6eacf6;
     padding: 5px;
     font-size: 18px;
-    margin: 5px 0px 10px 0px;
+    font-weight: 500;
     width: 100px;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #contactForm > button:hover {
-    background-color: rgb(144, 158, 238);
+    background-color: #6eacf6;
     color: white;
 }
 
