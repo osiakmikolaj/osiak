@@ -37,7 +37,7 @@ const cardData = {
 
 // close / open all cards
 function openCloseCards(windowWidth) {
-    if (windowWidth >= 683) {
+    if (windowWidth > 682) {
         openCardArray = [];
         const cards = cardsContainer.querySelectorAll(".card");
         cards.forEach((card) => {
@@ -54,7 +54,7 @@ function openCloseCards(windowWidth) {
                 </div>
             `;
         });
-    } else if (windowWidth <= 682) {
+    } else if (windowWidth < 683) {
         const cards = cardsContainer.querySelectorAll(".card");
         cards.forEach((card) => {
             const cardId = card.dataset.cardId;
@@ -66,7 +66,7 @@ function openCloseCards(windowWidth) {
 
 // open / close card
 function openCloseCard(event) {
-    if (windowWidth >= 683) return;
+    if (windowWidth > 682) return;
 
     const card = event.target.closest(".card");
     if (card) {
@@ -98,9 +98,13 @@ document.addEventListener("DOMContentLoaded", () => {
     openCloseCards(windowWidth);
 });
 
+// close cards only if window width changes
 window.addEventListener("resize", () => {
-    windowWidth = window.innerWidth;
-    openCloseCards(windowWidth);
+    const newWindowWidth = window.innerWidth;
+    if (newWindowWidth !== windowWidth) {
+        windowWidth = newWindowWidth;
+        openCloseCards(windowWidth);
+    }
 });
 
 // single card
