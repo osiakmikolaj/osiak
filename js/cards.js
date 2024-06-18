@@ -28,7 +28,7 @@ const cardData = {
     },
     4: {
         title: "Portfolio",
-        text: "the very site you're exploring right now! I designed it with mobile devices in mind, so you can seamlessly browse my work and experience whether you're on your phone, tablet, or computer.",
+        text: "The very site you're exploring right now! I designed it with mobile devices in mind, so you can seamlessly browse my work and experience whether you're on your phone, tablet, or computer.",
         links: `<a class="project-link" href="https://www.osiak.dev/" target="_blank">osiak.dev</a></br> 
         <a class="project-link" href="https://github.com/osiakmikolaj/osiak" target="_blank">Github</a>`,
         image: "assets/portfolio_view.png",
@@ -72,7 +72,8 @@ function openCloseCard(event) {
     if (card) {
         const cardId = card.dataset.cardId;
         const data = cardData[cardId];
-        const isTitleClicked = event.target.classList.contains("card-title");
+        const isTitleClicked = event.target.closest(".card-title");
+
         if (isTitleClicked && openCardArray.includes(cardId)) {
             card.innerHTML = `<div class="card-title"><span class="material-symbols-outlined"> keyboard_arrow_right </span>${data.title}</div>`;
             openCardArray = openCardArray.filter((id) => id !== cardId);
@@ -104,5 +105,7 @@ window.addEventListener("resize", () => {
 
 // single card
 cardsContainer.addEventListener("click", (event) => {
-    openCloseCard(event);
+    if (event.target.closest(".card")) {
+        openCloseCard(event);
+    }
 });
