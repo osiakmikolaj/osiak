@@ -1,7 +1,7 @@
 body {
     margin: 0;
     box-sizing: border-box;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Poppins", sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -91,11 +91,6 @@ nav a {
 
 #mode-btn {
     cursor: pointer;
-    transition: transform 0.5s ease;
-}
-
-#mode-btn:hover {
-    transform: rotate(360deg);
 }
 
 /* main */
@@ -138,37 +133,6 @@ nav a {
     }
 }
 
-/* Circle */
-#pulsating-circle {
-    z-index: -1;
-    position: absolute;
-    width: 350px;
-    height: 250px;
-    margin: -30px 0 0 60px;
-    border-radius: 50%;
-    filter: blur(15px);
-    box-shadow: 0 0 20px 10px rgba(255, 0, 0, 0.2);
-    animation: pulse 8s infinite;
-}
-
-@keyframes pulse {
-    0% {
-        background-color: rgba(255, 0, 0, 0.2);
-        transform: translate(-50%, -50%) scale(1);
-        box-shadow: 0 0 20px 10px rgba(255, 0, 0, 0.2);
-    }
-    50% {
-        background-color: rgba(0, 0, 255, 0.2);
-        transform: translate(-50%, -50%) scale(1.2);
-        box-shadow: 0 0 40px 20px rgba(0, 0, 255, 0.2);
-    }
-    100% {
-        background-color: rgba(255, 0, 0, 0.2);
-        transform: translate(-50%, -50%) scale(1);
-        box-shadow: 0 0 20px 10px rgba(255, 0, 0, 0.2);
-    }
-}
-
 /* Section 2 */
 #section-2 {
     display: flex;
@@ -194,6 +158,8 @@ nav a {
     display: flex;
     flex-direction: column;
     max-width: 630px;
+    border-radius: 2px;
+    background-color: rgba(110, 171, 246, 0.25);
 }
 
 .card-title {
@@ -278,6 +244,10 @@ nav a {
     font-size: 18px;
 }
 
+#about > p {
+    margin: 0;
+}
+
 /* Contact */
 #contact {
     display: flex;
@@ -322,8 +292,8 @@ nav a {
     border: 2px solid #6eacf6;
     padding: 5px;
     font-size: 16px;
-    width: 280px;
     height: 100px;
+    width: 250px;
     margin-bottom: 10px;
 }
 
