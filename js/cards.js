@@ -10,28 +10,28 @@ const cardData = {
         It was built using the Bootstrap framework, which provides a responsive layout that adapts to various devices.`,
         links: `<a class="project-link" href="https://www.zalasek.pl/" target="_blank">zalasek.pl</a></br>
         <a class="project-link" href="https://github.com/osiakmikolaj/zalasek" target="_blank">Github</a>`,
-        image: "assets/zalasek_view.png",
+        image: "assets/zalasek_view.webp",
     },
     2: {
         title: "Survival Game",
         text: "A 2D Shooter made with HTML5 Canvas and JavaScript.",
         links: `<a class="project-link" href="https://survivalgame.pages.dev/" target="_blank">survivalgame.pages.dev</a></br>
         <a class="project-link" href="https://github.com/osiakmikolaj/SurvivalGame" target="_blank">Github</a>`,
-        image: "assets/game_view.png",
+        image: "assets/game_view.webp",
     },
     3: {
         title: "TV Show Search",
         text: "A webiste for searching images of TV series.",
         links: `<a class="project-link" href="https://searchtvshows.pages.dev/" target="_blank">searchtvshows.pages.dev</a></br> 
         <a class="project-link" href="https://github.com/osiakmikolaj/searchTvShows" target="_blank">Github</a>`,
-        image: "assets/search_view.png",
+        image: "assets/search_view.webp",
     },
     4: {
         title: "Portfolio",
         text: "The very site you're exploring right now! I designed it with mobile devices in mind, so you can seamlessly browse my work and experience whether you're on your phone, tablet, or computer.",
         links: `<a class="project-link" href="https://www.osiak.dev/" target="_blank">osiak.dev</a></br> 
         <a class="project-link" href="https://github.com/osiakmikolaj/osiak" target="_blank">Github</a>`,
-        image: "assets/portfolio_view.png",
+        image: "assets/portfolio_view.webp",
     },
 };
 
